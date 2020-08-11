@@ -1,1 +1,22 @@
+The Shapefile in fact consists of several files: in addition to one file with the actual geometry data, another file for defining the coordinate reference system is needed, as well as a file for defining the attributes and a file to index the geometries. This makes operating Shapefiles slightly clunky and confusing. However, Shapefile has been around for so long that any GIS software supports handling it.
+	
+The shapefile is BY FAR the most common geospatial file type you’ll encounter. All commercial and open source accept shapefile as a GIS format. It’s so ubiquitous that it’s become the industry standard.
 
+But you’ll need a complete set of three files that are mandatory to make up a shapefile. The three required files are:
+
+  SHP is the feature geometry.
+  SHX is the shape index position.
+  DBF is the attribute data.
+You can optionally include these files but are not completely necessary.
+
+  PRJ is the projection system metadata.
+  XML is the associated metadata.
+  SBN is the spatial index for optimizing queries.
+  SBX optimizes loading times.
+
+GeoPackage was first developed by Open Geospatial Consortium (OGC) 5 years ago, making it the official alternative for Shapefile. It is a subset of SQLite, which in turn is a lighweight SQL implementation designed for stand-alone databases. Similar to GeoJSON, this makes GeoPackage highly compatible by design, and accessible by non-GIS software as well.
+GeoJSON is a subset of JSON (JavaScript object notation). It was developed 10 years ago by a group of enthusiastic GIS developers. The core idea is to provide a specification for encoding geospatial data while remaining decodable by any JSON decoder. The GeoJSON format is mostly for web-based mapping. GeoJSON stores coordinates as text in JavaScript Object Notation (JSON) form. This includes vector points, lines and polygons as well as tabular information.
+
+GeoJSON store objects within curly braces {} and in general have less markup overhead (compared to GML). GeoJSON has straightforward syntax that you can modify in any text editor.
+
+Webmaps browsers understand JavaScript so by default GeoJSON is a common web format. But JavaScript only understands binary objects. Fortunately, JavaScript can convert JSON to binary.
