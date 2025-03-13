@@ -4,8 +4,8 @@ This report helps schools prepare for the start of school. The number of expecte
 
 ### Steps Followed
 
-  Step 1 : Use Python to create a dummy data set. Code can be found here. After the dataset was created, for the purpose of showcasing how the data could show patterns/trends with Power BI, I manually adjusted the data to follow certain pre-determined patterns. (Noted. This is not at all how one should normally analyze real data.)
-  Step 2: I like to show when the data was loaded on my reports. To do so, I click “Enter Data” under Transform Data, setting the table title to “Last Date Refresh” and enter this Power Query (M) code to return the current date/time.  
+ - Step 1 : Use Python to create a dummy data set. Code can be found here. After the dataset was created, for the purpose of showcasing how the data could show patterns/trends with Power BI, I manually adjusted the data to follow certain pre-determined patterns. (Noted. This is not at all how one should normally analyze real data.)
+ - Step 2: I like to show when the data was loaded on my reports. To do so, I click “Enter Data” under Transform Data, setting the table title to “Last Date Refresh” and enter this Power Query (M) code to return the current date/time.  
   Step 3: To look at Apply Grade by Elementary, Middle and High School, I right click the column for Apply Grade, select New Group to create a new column, grouping grades 1-5 for Elementary, 6-8 for Middle, and 9-12 for High School. 
   Step 4: I make the measures for the reports cards and visuals, measures can be found here. 
   Step 5: Under View, I pick the theme “Accessible Title” for the report. 
