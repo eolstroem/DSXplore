@@ -1,5 +1,5 @@
 ### Highest Follow Through Rate = 
-VAR ProgramFollowThrough = 
+    VAR ProgramFollowThrough = 
     ADDCOLUMNS(
         VALUES('Updated_Dummy_Data'[Program]),
         "Rate", 
@@ -7,22 +7,22 @@ VAR ProgramFollowThrough =
             CALCULATE(COUNTROWS('Updated_Dummy_Data'), 'Updated_Dummy_Data'[Enrolled] = "Followed Through"), 
             CALCULATE(COUNTROWS('Updated_Dummy_Data'))
         ))
-VAR MaxProgram = 
+    VAR MaxProgram = 
     TOPN(1, ProgramFollowThrough, [Rate], DESC)
-RETURN 
+    RETURN 
     CONCATENATEX(MaxProgram, 'Updated_Dummy_Data'[Program] & " - " & FORMAT([Rate], "0%"), ", ")
 
 ### Highest Follow Through Count = 
-VAR ProgramFollowThrough = 
+    VAR ProgramFollowThrough = 
     ADDCOLUMNS(
         VALUES('Updated_Dummy_Data'[Program]),
         "Count", 
             CALCULATE(COUNTROWS('Updated_Dummy_Data'), 'Updated_Dummy_Data'[Enrolled] = "Followed Through")
     )
-VAR MaxProgram = 
+    VAR MaxProgram = 
     TOPN(1, ProgramFollowThrough, [Count], DESC)
-RETURN 
-    CONCATENATEX(MaxProgram, 'Updated_Dummy_Data'[Program] & " - " & [Count] & " students ", ", ")
+    RETURN 
+        CONCATENATEX(MaxProgram, 'Updated_Dummy_Data'[Program] & " - " & [Count] & " students ", ", ")
 
 ### Didn't Attend Offer_Dummy = 
     CALCULATE(
