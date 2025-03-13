@@ -1,0 +1,24 @@
+import pandas as pd
+import random
+
+# Define parameters
+programs = [f"School {chr(i)}" for i in range(ord('A'), ord('Z') + 1)]
+years = list(range(2018, 2025))
+accepted_status = ["Accepted", "Declined", "Pending"]
+enrolled_status = ["Didn't Attend", "Followed Through"]
+apply_grades = list(range(1, 13))
+school_choice_ranks = list(range(1, 7))
+
+# Generate dataset
+num_rows = 5000  # Adjust as needed
+data = {
+    "Program": [random.choice(programs) for _ in range(num_rows)],
+    "Year": [random.choice(years) for _ in range(num_rows)],
+    "Accepted": [random.choice(accepted_status) for _ in range(num_rows)],
+    "Enrolled": [random.choice(enrolled_status) for _ in range(num_rows)],
+    "Apply Grade": [random.choice(apply_grades) for _ in range(num_rows)],
+    "School Choice Rank": [random.choice(school_choice_ranks) for _ in range(num_rows)]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
